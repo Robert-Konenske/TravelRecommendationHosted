@@ -36,10 +36,12 @@ async function fetchRecommendations() {
     searchInput.addEventListener('input', () => {
       const keyword = searchInput.value.toLowerCase();
       const filteredRecommendations = recommendations.filter(recommendation => 
-        recommendation.name.toLowerCase().includes(keyword) ||
-        recommendation.description.toLowerCase().includes(keyword) ||
-        (keyword === 'beaches' && recommendation.type === 'beach' ) ||
-        (keyword === 'temples' && recommendation.type === 'temple')
+        (recommendation.name.toLowerCase().includes(keyword) ||
+        recommendation.description.toLowerCase().includes(keyword)) &&
+        !(keyword === 'temples' && recommendation.name.toLowerCase() === 'kyoto, japan') &&
+        !(keyword === 'beaches' && recommendation.name.toLowerCase() === 'rio de janeiro, brazil') &&
+        (keyword !== 'temples' || recommendation.type === 'temple') &&
+        (keyword !== 'beaches' || recommendation.type === 'beach')
       );
       displayRecommendations(filteredRecommendations);
     });
