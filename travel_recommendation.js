@@ -7,7 +7,9 @@ async function fetchRecommendations() {
       country.cities.map(city => ({
         name: city.name,
         imageUrl: city.imageUrl,
-        description: city.description
+        description: city.description,
+        hasBeaches: city.hasBeaches, // Assuming this attribute exists in your JSON
+        hasTemples: city.hasTemples  // Assuming this attribute exists in your JSON
       }))
     );
 
@@ -20,7 +22,9 @@ async function fetchRecommendations() {
       const keyword = searchInput.value.toLowerCase();
       const filteredRecommendations = recommendations.filter(recommendation => 
         recommendation.name.toLowerCase().includes(keyword) ||
-        recommendation.description.toLowerCase().includes(keyword)
+        recommendation.description.toLowerCase().includes(keyword) ||
+        (keyword === 'beaches' && recommendation.hasBeaches) ||
+        (keyword === 'temples' && recommendation.hasTemples)
       );
       displayRecommendations(filteredRecommendations);
     });
@@ -65,19 +69,3 @@ function clearResults() {
   const resultsDiv = document.getElementById('results');
   resultsDiv.innerHTML = '';
 }
-
-// Function to search for keywords (example implementation)
-function searchKeyword() {
-  const searchBox = document.querySelector('.search-box');
-  const query = searchBox.value;
-  
-  // Example: Display search query in the results div
-  const resultsDiv = document.getElementById('results');
-  resultsDiv.innerHTML = `<p>Searching for: ${query}</p>`;
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('btnSearch').addEventListener('click', searchKeyword);
-  document.getElementById('btnClear').addEventListener('click', clearResults);
-  fetchRecommendations();
-});
