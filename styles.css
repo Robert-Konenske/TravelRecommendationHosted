@@ -1,0 +1,276 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url('./background_image1.webp');
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-attachment: fixed; /* Fix the image in place */
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 10px;
+    width: 100%;    
+    height: 30px;
+}
+
+/* navigation styling */
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 7px 20px;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+main {
+    color: white;
+    padding: 20px;
+    display: in;
+    font-size: 2em;
+    flex: 1;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2px;
+    width: 100%;
+    position:fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.spaceBetween {
+    justify-content: space-between;
+}
+/* title */
+.title {
+    flex: auto;
+    align-self: flex-start;
+}
+
+/* nav links */
+.navLinksHome {
+    flex: auto;
+    align-self: center;
+}
+
+.navLinks {
+    margin-left: -415px;
+    flex: auto;
+    align-self: center;
+    margin-top: 7px;
+}
+/* home page search bar and buttons */
+.search {
+    align-self: flex-end;
+    align-items: baseline;
+    margin-right: 40px;
+}
+/* about and contact us nav bar */
+.center-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.landingPage {
+    display: flex;
+    flex-direction: row;
+}
+
+.explore {
+    max-width: 40%;
+    margin: 10px;
+}
+
+.transbox {
+    justify-content: space-around;
+    padding: 10px;
+    margin: 10px;
+    height: auto;
+    opacity: 0.9;
+    flex: 1;
+  }
+
+.transbox h1 {
+    font-size: 80px;
+}
+
+.transbox p {
+    padding: 1.9em;
+    color: #ffffff;
+    flex: 1;
+    font-size: .7em;
+  }
+
+.left {
+    text-align: start;
+    font-size: 1em;
+}
+
+#results {
+    display: fl;
+    flex-direction: column;
+    align-self: flex-end;
+    flex: 1;
+  }
+
+.recommendation {
+    justify-content: end;
+}
+
+
+/* About Us Page Specific Styles */
+.about-container {
+    margin: 1 auto;
+    padding: 10px;
+    align-content: center;
+}
+
+/* team member styling */
+.team-section {
+    display: flex;
+    flex-direction: row;
+    margin: 30px;
+    padding: 10px;
+    font-size: large;
+}
+
+.team-section h2 {
+    margin-right: 2px;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+}
+
+.team-member {
+    margin-bottom: 10px;
+    font-size: smaller;
+    background-color: #333;
+    border: 1px solid black;
+    opacity: 0.95;
+    margin: 10px;
+    padding: 20px;
+    flex: 1 0 50px;
+
+
+}
+/* about us transbox */
+div.transboxAbout {
+    margin: 10px;
+    padding: 10px;
+    background-color: #333;
+    border: 1px solid black;
+    opacity: 0.9;
+    font-size: .7em;
+  }
+
+/* contact Us Page Specific Styles */
+textarea {
+    width: 99%;
+}
+/* styling form elements */
+
+.contact-page {
+    display: flex;
+    align-items: center;
+    margin: 150px;
+}
+
+.contact-header {
+    width: 50%;
+}
+
+.contact-container {
+    flex: 1;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #333;
+    opacity: .9;
+}
+
+.contactForm  { display: table;      }
+label { display: table-cell; }
+input { 
+    display: table-cell; 
+    width: 99%;
+    color: white;
+}
+
+.contact-container h6 {
+    text-align: center;
+}
+
+.contact-container p {
+    font-size: 1.2em;
+    line-height: .5;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.search-box {
+    width: 380px; /* Increase the width as needed */
+    height: 5px; /* Increase the height as needed */
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: #333;
+}
+#btnSearch {
+    color: white;
+    padding: 4px;
+    border-radius: 10px;
+    background-color: #CC5500;
+    width: 60px;
+    margin-left: -140px;
+}
+
+#btnClear {
+    color: white;
+    padding: 4px;
+    width: 60px;
+    border-radius: 10px;
+    background-color: #CC5500;
+}
+
+#btnBookNow {
+    background-color: #CC5500;
+    color: white;
+    font-size: x-large;
+    margin-left:  0px;
+    padding: 7px;
+    border-radius: 10px;
+}
+
+input[type=submit] {
+    width: 99%;
+    height: 40px;
+    background-color: #CC5500;
+}

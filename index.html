@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Junkies</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<header>
+<nav>
+<ul class="spaceBetween">
+  <div class="title">
+    <li><b>Travel Junkies</b></li>
+  </div>
+  <div class="navLinksHome">
+    <li><a href="./index.html" id="home">Home </a></li>
+    <li><a href="./about.html" id="aboutUs">About us </a></li>
+    <li><a href="./contact.html" id="contact">Contact Us </a></li>
+  </div>
+  <div class="search">
+    <li><input type="text" id="searchInput" class="search-box" placeholder="Enter a destination or keyword"><button onclick="searchKeyword()" id='btnSearch'>Search</button>  <button onclick="clearResults()" id='btnClear'>Clear</button></li>
+  </div>
+</ul>
+</nav>
+</header>
+<main>
+<div class="landingPage">
+  <div class="explore">
+   <div class="transbox">
+      <h1 class="left">EXPLORE DREAM DESTINATIONS</h1>
+    </div>
+    <div class="transbox">
+     <p class="left">We encourage exploration of unfamiliar territories, embracing diverse cultures and landscapes, while pursuing the designed destination that captivates the heart and ignites a sense of wonder</p>
+    </div>
+    <div class="transbox">
+    <p class="left"><button id='btnBookNow'>BOOK NOW</button></p>
+    </div>
+  </div>
+<div class="recommendation">
+  <div id="results"></div>
+</div>
+</div>
+</main>
+<footer>
+    <p>&copy; 2024 Travel Junkies</p>
+</footer>
+<script src="./travel_recommendation.js"></script>
+</body>
+
+</html>

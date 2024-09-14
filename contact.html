@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <div class="title">
+                    <li><b>Travel Junkies</b></li>
+                </div>
+                <div class="navLinks">
+                    <li><a href="./index.html" id="home">Home </a></li>
+                    <li><a href="./about.html" id="aboutUs">About us </a></li>
+                    <li><a href="./contact.html" id="contact">Contact Us </a></li>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="contact-page">
+        <div class="contact-header">
+        <h1>Contact Us</h1></div>
+
+        <div class="contact-container">
+            <form id="contactForm">
+                <p>
+                <label for="name">Name:</label>
+                </p>
+                <p>
+                <input type="text" id="name" name="name" required>
+                </p>
+                <p>
+                <label for="email">Email:</label>
+                <p>
+                <input type="email" id="email" name="email" required>
+                </p>
+                <p>
+                <label for="message">Message:</label>
+                </p>
+                <p>
+                <textarea id="message" name="message" rows="6" required></textarea>
+                </p>
+                <input type="submit" value="Submit">
+            </form>
+            <h6>Get in touch</h6>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="travel_recommendation.js"></script>
+    <footer>
+        <p>&copy; 2024 Travel Junkies</p>
+    </footer>
+</body>
+</html>
