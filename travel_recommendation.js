@@ -35,14 +35,21 @@ async function fetchRecommendations() {
     const searchInput = document.getElementById('searchInput');
     searchInput.addEventListener('input', () => {
       const keyword = searchInput.value.toLowerCase();
-      const filteredRecommendations = recommendations.filter(recommendation => 
-        (recommendation.name.toLowerCase().includes(keyword) ||
-        recommendation.description.toLowerCase().includes(keyword)) &&
-        !(keyword === 'temples' && recommendation.name.toLowerCase() === 'kyoto, japan') &&
-        !(keyword === 'beaches' && recommendation.name.toLowerCase() === 'rio de janeiro, brazil') &&
-        (keyword !== 'temples' || recommendation.type === 'temple') &&
-        (keyword !== 'beaches' || recommendation.type === 'beach')
-      );
+      const filteredRecommendations = recommendations.filter(recommendation => {
+        // Exclusion logic
+        if (keyword === 'temples' && recommendation.name.toLowerCase() === 'kyoto, japan') {
+          return false;
+        }
+        if (keyword === 'beaches' && recommendation.name.toLowerCase() === 'rio de janeiro, brazil') {
+          return false;
+        }
+        return (
+          recommendation.name.toLowerCase().includes(keyword) ||
+          recommendation.description.toLowerCase().includes(keyword) ||
+          (keyword === 'beaches' && recommendation.type === 'beach') ||
+          (keyword === 'temples' && recommendation.type === 'temple')
+        );
+      });
       displayRecommendations(filteredRecommendations);
     });
 
