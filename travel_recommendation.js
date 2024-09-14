@@ -1,17 +1,32 @@
 async function fetchRecommendations() {
   try {
-    const response = await fetch('travelRecommendation/travel_recommendation_api.json');
+    const response = await fetch('./travel_recommendation_api.json');
     const data = await response.json();
     
-    const recommendations = data.countries.flatMap(country => 
+    const cityRecommendations = data.countries.flatMap(country => 
       country.cities.map(city => ({
         name: city.name,
         imageUrl: city.imageUrl,
         description: city.description,
-        hasBeaches: city.hasBeaches, // Assuming this attribute exists in your JSON
-        hasTemples: city.hasTemples  // Assuming this attribute exists in your JSON
+        type: 'city'
       }))
     );
+
+    const templeRecommendations = data.temples.map(temple => ({
+      name: temple.name,
+      imageUrl: temple.imageUrl,
+      description: temple.description,
+      type: 'temple'
+    }));
+
+    const beachRecommendations = data.beaches.map(beach => ({
+      name: beach.name,
+      imageUrl: beach.imageUrl,
+      description: beach.description,
+      type: 'beach'
+    }));
+
+    const recommendations = [...cityRecommendations, ...templeRecommendations, ...beachRecommendations];
 
     // Display all recommendations initially
     displayRecommendations(recommendations);
@@ -23,8 +38,8 @@ async function fetchRecommendations() {
       const filteredRecommendations = recommendations.filter(recommendation => 
         recommendation.name.toLowerCase().includes(keyword) ||
         recommendation.description.toLowerCase().includes(keyword) ||
-        (keyword === 'beaches' && recommendation.hasBeaches) ||
-        (keyword === 'temples' && recommendation.hasTemples)
+        (keyword === 'beaches' && recommendation.type === 'beach' ) ||
+        (keyword === 'temples' && recommendation.type === 'temple')
       );
       displayRecommendations(filteredRecommendations);
     });
