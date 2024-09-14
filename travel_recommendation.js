@@ -11,26 +11,8 @@ async function fetchRecommendations() {
       }))
     );
 
-    const temples = data.countries.flatMap(country => 
-      country.cities.map(city => ({
-        name: city.name,
-        imageUrl: city.imageUrl,
-        description: city.description
-      }))
-    );
-
-    const beaches = data.countries.flatMap(country => 
-      country.temples.map(city => ({
-        name: city.name,
-        imageUrl: city.imageUrl,
-        description: city.description
-      }))
-    );
-
     // Display all recommendations initially
     displayRecommendations(recommendations);
-    displayRecommendations(temples);
-    displayRecommendations(beaches);
 
     // Add event listener for search input
     const searchInput = document.getElementById('searchInput');
@@ -41,26 +23,6 @@ async function fetchRecommendations() {
         recommendation.description.toLowerCase().includes(keyword)
       );
       displayRecommendations(filteredRecommendations);
-    });
-
-    const searchInputT = document.getElementById('searchInput');
-    searchInputT.addEventListener('input', () => {
-      const keyword = searchInput.value.toLowerCase();
-      const filteredRecommendationsT = temples.filter(recommendation => 
-        recommendation.name.toLowerCase().includes(keyword) ||
-        recommendation.description.toLowerCase().includes(keyword)
-      );
-      displayRecommendations(filteredRecommendationsT);
-    });
-
-    const searchInputB = document.getElementById('searchInput');
-    searchInputB.addEventListener('input', () => {
-      const keyword = searchInput.value.toLowerCase();
-      const filteredRecommendationsB = beaches.filter(recommendation => 
-        recommendation.name.toLowerCase().includes(keyword) ||
-        recommendation.description.toLowerCase().includes(keyword)
-      );
-      displayRecommendations(filteredRecommendationsB);
     });
 
   } catch (error) {
