@@ -37,6 +37,7 @@ async function fetchRecommendations() {
       const keyword = searchInput.value.toLowerCase();
       const filteredRecommendations = recommendations.filter(recommendation => 
         recommendation.name.toLowerCase().includes(keyword) ||
+        recommendation.description.toLowerCase().includes(keyword) ||
         (keyword === 'beaches' && recommendation.type === 'beach') ||
         (keyword === 'temples' && recommendation.type === 'temple')
       );
