@@ -1,6 +1,6 @@
 async function fetchRecommendations() {
   try {
-    const response = await fetch('./travel_recommendation_api.json');
+    const response = await fetch('travelRecommendation/travel_recommendation_api.json');
     const data = await response.json();
     
     const cityRecommendations = data.countries.flatMap(country => 
